@@ -32,6 +32,9 @@ test("server-renders the dense one-page academic homepage", async () => {
   assert.match(html, /Hongzheng Li/);
   assert.match(html, /李鸿政/);
   assert.match(html, /Google Scholar/);
+  assert.match(html, /Ethan_Lee@bupt\.edu\.cn/);
+  assert.match(html, /Yingxia Shao/);
+  assert.match(html, /shaoyx\.github\.io/);
   assert.match(html, /Publications/);
   assert.match(html, /JITPrune/);
   assert.match(html, /Cross-Architecture Knowledge Transfer/);

@@ -219,7 +219,7 @@ export default function Home() {
             </li>
             <li>
               <span aria-hidden="true">✉</span>{" "}
-              <a href="mailto:Ethan_Lee@bupt.edu.cn">Email</a>
+              <a href="mailto:Ethan_Lee@bupt.edu.cn">Ethan_Lee@bupt.edu.cn</a>
             </li>
             <li>
               <span aria-hidden="true">◉</span>{" "}
@@ -249,7 +249,15 @@ export default function Home() {
             <p>
               Currently, I am a Ph.D. student in the School of Computer Science,
               Beijing University of Posts and Telecommunications (BUPT), and a
-              member of the iDMG research group.
+              member of the iDMG research group, supervised by Prof.{" "}
+              <a
+                href="https://shaoyx.github.io/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Yingxia Shao
+              </a>
+              .
             </p>
             <p>
               My research focuses on <strong>ML systems</strong>, with an
