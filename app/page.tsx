@@ -1,217 +1,193 @@
-const researchAreas = [
-  {
-    index: "01",
-    title: "ML Systems",
-    description:
-      "Systems and infrastructure that make large-scale model training and inference efficient, reliable, and measurable.",
-  },
-  {
-    index: "02",
-    title: "Large-scale Recommendation",
-    description:
-      "Training systems for embedding-based recommendation models, with a focus on resource efficiency and production constraints.",
-  },
-  {
-    index: "03",
-    title: "Distributed GNN Training",
-    description:
-      "Communication-efficient, decentralized training systems for graph neural networks at billion-node scale.",
-  },
-  {
-    index: "04",
-    title: "Efficient LLM Inference",
-    description:
-      "Runtime and systems techniques for efficient LLM and Mixture-of-Experts inference.",
-  },
-];
-
 const publications = [
   {
     year: "2026",
-    venue: "IEEE ICDE",
-    status: "Published",
     title:
       "JITPrune: An Efficient Online Feature Pruning Framework for Embedding-based DLRM Training",
-    authors:
-      "Hongzheng Li, Yucheng Wu, Junjie Zhai, Anan Liu, Yuekui Yang, Yingxia Shao",
-    description:
-      "An online feature-pruning framework that removes redundant embeddings during DLRM training without stalling the training pipeline.",
-    note: "First author · Industry & Applications Track",
+    authors: (
+      <>
+        <strong>Hongzheng Li</strong>, Yucheng Wu, Junjie Zhai, Anan Liu,
+        Yuekui Yang, Yingxia Shao
+      </>
+    ),
+    venue: "IEEE ICDE 2026, Industry and Applications Track",
+    links: [
+      {
+        label: "conference",
+        href: "https://icde2026.github.io/program_details.html",
+      },
+    ],
   },
   {
     year: "2026",
-    venue: "IEEE TKDE",
-    status: "Under revision",
+    title:
+      "Efficient Cross-Architecture Knowledge Transfer for Large-Scale Online User Response Prediction",
+    authors: (
+      <>
+        Yucheng Wu, Yuekui Yang, <strong>Hongzheng Li</strong>, Anan Liu, Jian
+        Xiao, Junjie Zhai, Huan Yu, Shaoping Ma, Leye Wang
+      </>
+    ),
+    venue: "arXiv preprint",
+    links: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2602.01775",
+      },
+    ],
+  },
+  {
+    year: "2026",
     title:
       "Efficient Distributed Mini-batch GNN Training with Decentralized Batch Processing",
-    authors: "DEGNN",
-    description:
-      "A decentralized mini-batch GNN training system that shifts remote data pulling into computation pushing, reducing communication at billion-node scale.",
-    note: "Major revision",
+    authors: (
+      <>
+        <strong>Hongzheng Li</strong> et al.
+      </>
+    ),
+    venue: "Under revision at IEEE TKDE",
+    links: [],
   },
 ];
 
 export default function Home() {
   return (
-    <main>
-      <aside className="rail" aria-label="Site identity">
-        <a className="rail-mark" href="#top" aria-label="Back to top">
-          HL
+    <main className="page" id="top">
+      <header className="site-header">
+        <a className="site-name" href="#top">
+          Hongzheng Li
         </a>
-        <span className="rail-text">ACADEMIC INDEX · 2026</span>
-      </aside>
+        <nav aria-label="Primary navigation">
+          <a href="#about">About</a>
+          <a href="#publications">Publications</a>
+          <a href="#experience">Experience</a>
+        </nav>
+      </header>
 
-      <div className="site-shell" id="top">
-        <header className="site-header">
-          <a className="wordmark" href="#top">
-            Hongzheng Li
-          </a>
-          <nav aria-label="Primary navigation">
-            <a href="#about">About</a>
-            <a href="#research">Research</a>
-            <a href="#work">Work</a>
-            <a href="#experience">Experience</a>
-          </nav>
-          <a
-            className="header-link"
-            href="https://github.com/DuoLife-QNL"
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub <span aria-hidden="true">↗</span>
-          </a>
-        </header>
+      <section className="intro" id="about">
+        <div className="intro-main">
+          <h1>
+            Hongzheng Li <span>李鸿政</span>
+          </h1>
+          <p className="role">
+            Ph.D. Candidate in Computer Science
+            <br />
+            Beijing University of Posts and Telecommunications
+          </p>
 
-        <section className="hero" id="about" aria-labelledby="hero-title">
-          <div className="hero-kicker">
-            <span className="status-dot" aria-hidden="true" />
-            BUPT · iDMG
+          <p>
+            I am a Ph.D. candidate at the School of Computer Science, Beijing
+            University of Posts and Telecommunications (BUPT), working with the
+            iDMG research group.
+          </p>
+          <p>
+            My research focuses on <strong>ML systems for large-scale learning</strong>.
+            I am particularly interested in large-scale recommendation systems,
+            distributed GNN training, and efficient LLM and Mixture-of-Experts
+            inference.
+          </p>
+
+          <div className="profile-links" aria-label="Profile links">
+            <a
+              href="https://github.com/DuoLife-QNL"
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub
+            </a>
+            <span aria-hidden="true">/</span>
+            <a href="#publications">Publications</a>
           </div>
-          <div className="hero-grid">
+        </div>
+
+        <aside className="quick-info" aria-label="Quick information">
+          <div className="initials" aria-hidden="true">
+            HL
+          </div>
+          <dl>
             <div>
-              <p className="eyebrow">Ph.D. Candidate · Computer Science</p>
-              <h1 id="hero-title">
-                Hongzheng
-                <br />
-                Li <span>李鸿政</span>
-              </h1>
+              <dt>Location</dt>
+              <dd>Beijing, China</dd>
             </div>
-            <div className="hero-statement">
-              <p>
-                I build <strong>ML systems for large-scale learning</strong>,
-                spanning recommendation, distributed graph training, and
-                efficient LLM inference.
-              </p>
-              <a href="#work">
-                Selected work <span aria-hidden="true">↓</span>
-              </a>
+            <div>
+              <dt>Affiliation</dt>
+              <dd>BUPT · iDMG</dd>
             </div>
-          </div>
-          <div className="hero-meta" aria-label="Research summary">
-            <span>BASED IN BEIJING, CHINA</span>
-            <span>TRAINING · INFERENCE · INFRASTRUCTURE</span>
-            <span>UPDATED JUL 2026</span>
-          </div>
-        </section>
+            <div>
+              <dt>Research</dt>
+              <dd>ML Systems</dd>
+            </div>
+          </dl>
+        </aside>
+      </section>
 
-        <section className="section research-section" id="research">
-          <div className="section-heading">
-            <p className="section-index">01 / RESEARCH</p>
-            <h2>Systems questions,<br />grounded in real workloads.</h2>
-          </div>
-          <div className="research-list">
-            {researchAreas.map((area) => (
-              <article className="research-row" key={area.index}>
-                <span>{area.index}</span>
-                <h3>{area.title}</h3>
-                <p>{area.description}</p>
-              </article>
-            ))}
-          </div>
-        </section>
+      <section className="content-section" id="research">
+        <h2>Research Interests</h2>
+        <ul className="interest-list">
+          <li>ML systems and infrastructure for large-scale model training</li>
+          <li>Large-scale recommendation and embedding systems</li>
+          <li>Communication-efficient distributed GNN training</li>
+          <li>Efficient LLM and Mixture-of-Experts inference</li>
+        </ul>
+      </section>
 
-        <section className="section work-section" id="work">
-          <div className="section-heading work-heading">
-            <p className="section-index">02 / SELECTED WORK</p>
-            <h2>Research &amp; publications</h2>
-            <p>
-              Selected work on systems for large-scale learning. Publication
-              status is shown explicitly.
-            </p>
-          </div>
-          <div className="publication-list">
-            {publications.map((publication) => (
-              <article className="publication" key={publication.title}>
-                <div className="publication-meta">
-                  <span>{publication.year}</span>
-                  <span>{publication.venue}</span>
-                  <span className="publication-status">
-                    {publication.status}
-                  </span>
-                </div>
-                <div className="publication-body">
-                  <h3>{publication.title}</h3>
-                  <p className="authors">{publication.authors}</p>
-                  <p className="publication-description">
-                    {publication.description}
+      <section className="content-section" id="publications">
+        <h2>Selected Publications</h2>
+        <p className="section-note">
+          My name is shown in bold. Publication status is listed explicitly.
+        </p>
+
+        <div className="publication-list">
+          {publications.map((publication) => (
+            <article className="publication" key={publication.title}>
+              <span className="publication-year">{publication.year}</span>
+              <div>
+                <h3>{publication.title}</h3>
+                <p className="authors">{publication.authors}</p>
+                <p className="venue">{publication.venue}</p>
+                {publication.links.length > 0 && (
+                  <p className="paper-links">
+                    {publication.links.map((link) => (
+                      <a
+                        href={link.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        key={link.label}
+                      >
+                        [{link.label}]
+                      </a>
+                    ))}
                   </p>
-                  <p className="publication-note">{publication.note}</p>
-                </div>
-                <span className="publication-arrow" aria-hidden="true">↗</span>
-              </article>
-            ))}
-          </div>
-        </section>
-
-        <section className="section experience-section" id="experience">
-          <div className="section-heading">
-            <p className="section-index">03 / EXPERIENCE</p>
-            <h2>Academic &amp; industry</h2>
-          </div>
-          <div className="timeline">
-            <article>
-              <p className="timeline-date">2023 — PRESENT</p>
-              <div>
-                <h3>Ph.D. Candidate</h3>
-                <p>Beijing University of Posts and Telecommunications</p>
-                <span>Computer Science · iDMG</span>
+                )}
               </div>
             </article>
-            <article>
-              <p className="timeline-date">2024 — 2026</p>
-              <div>
-                <h3>Research Intern</h3>
-                <p>Tencent</p>
-                <span>Large-scale recommendation systems</span>
-              </div>
-            </article>
-          </div>
-        </section>
+          ))}
+        </div>
+      </section>
 
-        <section className="contact-section" aria-labelledby="contact-title">
-          <p className="section-index">04 / CONTACT</p>
-          <div>
-            <h2 id="contact-title">Interested in systems that work at scale?</h2>
-            <p>
-              I am always happy to discuss ML systems, recommendation
-              infrastructure, distributed training, and research ideas.
-            </p>
-          </div>
-          <a
-            href="https://github.com/DuoLife-QNL"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Find me on GitHub <span aria-hidden="true">↗</span>
-          </a>
-        </section>
+      <section className="content-section" id="experience">
+        <h2>Experience</h2>
+        <div className="experience-list">
+          <article>
+            <p className="experience-time">2023 — present</p>
+            <div>
+              <h3>Ph.D. Candidate, BUPT</h3>
+              <p>Computer Science · iDMG research group</p>
+            </div>
+          </article>
+          <article>
+            <p className="experience-time">2024 — 2026</p>
+            <div>
+              <h3>Research Intern, Tencent</h3>
+              <p>Large-scale recommendation systems</p>
+            </div>
+          </article>
+        </div>
+      </section>
 
-        <footer>
-          <p>© 2026 Hongzheng Li</p>
-          <p>Designed for clarity. Built for the open web.</p>
-          <a href="#top">Back to top ↑</a>
-        </footer>
-      </div>
+      <footer>
+        <p>© 2026 Hongzheng Li</p>
+        <a href="#top">Back to top</a>
+      </footer>
     </main>
   );
 }

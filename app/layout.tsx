@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist } from "next/font/google";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -7,14 +7,9 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://duolife.cc"),
-  title: "Hongzheng Li · ML Systems Researcher",
+  title: "Hongzheng Li · Homepage",
   description:
     "Hongzheng Li is a Ph.D. candidate at BUPT working on ML systems, large-scale recommendation, distributed GNN training, and efficient LLM inference.",
   keywords: [
@@ -26,7 +21,7 @@ export const metadata: Metadata = {
     "LLM Inference",
   ],
   openGraph: {
-    title: "Hongzheng Li · ML Systems Researcher",
+    title: "Hongzheng Li · Homepage",
     description:
       "Research in ML systems, large-scale recommendation, distributed GNN training, and efficient LLM inference.",
     type: "website",
@@ -35,7 +30,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Hongzheng Li · ML Systems Researcher",
+    title: "Hongzheng Li · Homepage",
     description: "ML systems for large-scale learning.",
     images: ["/og.png"],
   },
@@ -48,9 +43,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
-        {children}
-      </body>
+      <body className={geistSans.variable}>{children}</body>
     </html>
   );
 }

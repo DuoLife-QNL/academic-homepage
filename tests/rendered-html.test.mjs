@@ -22,16 +22,19 @@ async function render() {
   );
 }
 
-test("server-renders the academic homepage", async () => {
+test("server-renders the one-page academic homepage", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Hongzheng Li · ML Systems Researcher<\/title>/i);
-  assert.match(html, /Hongzheng/);
+  assert.match(html, /<title>Hongzheng Li · Homepage<\/title>/i);
+  assert.match(html, /Hongzheng Li/);
   assert.match(html, /李鸿政/);
+  assert.match(html, /Research Interests/);
+  assert.match(html, /Selected Publications/);
   assert.match(html, /JITPrune/);
+  assert.match(html, /Cross-Architecture Knowledge Transfer/);
   assert.match(html, /Efficient Distributed Mini-batch GNN Training/);
   assert.match(html, /Beijing University of Posts and Telecommunications/);
   assert.match(html, /og\.png/);
