@@ -307,8 +307,16 @@ export default function Home() {
             <h2>📖 Education</h2>
             <ul className="plain-list">
               <li>
-                2023 ~ Present, Ph.D. Student, School of Computer Science,
-                Beijing University of Posts and Telecommunications (BUPT).
+                2023 ~ Present, Ph.D. Program in Computer Science and
+                Technology, Beijing University of Posts and Telecommunications
+                (BUPT).
+              </li>
+              <li>
+                2021 ~ 2023, Master&apos;s Program in Computer Science and
+                Technology, BUPT. Transferred to the Ph.D. program in 2023.
+              </li>
+              <li>
+                2017 ~ 2021, B.E. in Computer Science and Technology, BUPT.
               </li>
             </ul>
           </section>

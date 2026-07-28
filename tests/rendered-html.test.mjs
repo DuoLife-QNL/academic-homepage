@@ -46,6 +46,9 @@ test("server-renders the dense one-page academic homepage", async () => {
   assert.doesNotMatch(html, /An Undergraduate Course for FOSS/);
   assert.match(html, /JD TGT/);
   assert.match(html, /2026 ~ Present/);
+  assert.match(html, /2021 ~ 2023/);
+  assert.match(html, /2017 ~ 2021/);
+  assert.match(html, /Transferred to the Ph\.D\. program in 2023/);
   assert.match(html, /CCF-A/);
   assert.match(html, /CCF-B/);
   assert.match(html, /CCF-C/);
