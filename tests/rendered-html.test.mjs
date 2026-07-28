@@ -40,7 +40,9 @@ test("server-renders the dense one-page academic homepage", async () => {
   assert.match(html, /SpanGNN/);
   assert.match(html, /GraSorw/);
   assert.match(html, /COIN: Graph Contrastive Learning/);
-  assert.match(html, /An Undergraduate Course for FOSS/);
+  assert.doesNotMatch(html, /An Undergraduate Course for FOSS/);
+  assert.match(html, /JD TGT/);
+  assert.match(html, /2026 ~ Present/);
   assert.match(html, /CCF-A/);
   assert.match(html, /CCF-B/);
   assert.match(html, /CCF-C/);

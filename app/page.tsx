@@ -7,8 +7,7 @@ type Publication = {
   title: string;
   authors: React.ReactNode;
   venue: string;
-  year: string;
-  ccf: "A" | "B" | "C" | "Not Listed" | "N/A";
+  ccf?: "A" | "B" | "C" | "Not Listed";
   note?: string;
   links: Link[];
 };
@@ -23,10 +22,9 @@ const mlSystems: Publication[] = [
         Yuekui Yang, Yingxia Shao
       </>
     ),
-    venue: "IEEE International Conference on Data Engineering (ICDE)",
-    year: "2026",
+    venue: "ICDE 2026 Industry and Applications",
     ccf: "A",
-    note: "Industry and Applications Track · Oral",
+    note: "Oral",
     links: [
       {
         label: "Conference",
@@ -43,9 +41,7 @@ const mlSystems: Publication[] = [
         Xiao, Junjie Zhai, Huan Yu, Shaoping Ma, Leye Wang
       </>
     ),
-    venue: "arXiv preprint",
-    year: "2026",
-    ccf: "N/A",
+    venue: "In preprint",
     note: "CrossAdapt",
     links: [
       {
@@ -62,14 +58,14 @@ const graphSystems: Publication[] = [
       "Efficient Distributed Mini-batch GNN Training with Decentralized Batch Processing",
     authors: (
       <>
-        <strong>Hongzheng Li</strong>, Siyu Lou, Yingxia Shao, Yawen Li,
-        Lixing Zhang, Hongbo Yin, Wentao Zhang
+        <strong>Hongzheng Li</strong>
+        <sup>#</sup>, Siyu Lou<sup>#</sup>, Yingxia Shao*, Yawen Li, Lixing
+        Zhang, Hongbo Yin, Wentao Zhang
       </>
     ),
-    venue: "IEEE Transactions on Knowledge and Data Engineering (TKDE)",
-    year: "2026",
+    venue: "IEEE TKDE, under major revision",
     ccf: "A",
-    note: "Under major revision · Hongzheng Li and Siyu Lou contributed equally",
+    note: "DEGNN",
     links: [],
   },
   {
@@ -81,8 +77,7 @@ const graphSystems: Publication[] = [
         Liang, Yingxia Shao
       </>
     ),
-    venue: "Data Science and Engineering (DSE)",
-    year: "2026",
+    venue: "Data Science and Engineering (2026)",
     ccf: "C",
     links: [
       {
@@ -99,12 +94,11 @@ const graphSystems: Publication[] = [
         Yawen Li, Xupeng Miao, Wentao Zhang, Bin Cui, Lei Chen
       </>
     ),
-    venue: "ACM Computing Surveys (CSUR), 56(8): 1–39",
-    year: "2024",
+    venue: "ACM Computing Surveys 56(8), 1–39 (2024)",
     ccf: "Not Listed",
     links: [
       {
-        label: "DOI",
+        label: "Paper",
         href: "https://doi.org/10.1145/3648358",
       },
       {
@@ -122,18 +116,16 @@ const graphSystems: Publication[] = [
         Chen, Yingxia Shao
       </>
     ),
-    venue:
-      "European Conference on Machine Learning and Principles and Practice of Knowledge Discovery in Databases (ECML-PKDD)",
-    year: "2024",
+    venue: "ECML-PKDD 2024",
     ccf: "B",
     links: [
       {
-        label: "arXiv",
-        href: "https://arxiv.org/abs/2406.04938",
+        label: "Paper",
+        href: "https://doi.org/10.1007/978-3-031-70352-2_15",
       },
       {
-        label: "DOI",
-        href: "https://doi.org/10.1007/978-3-031-70352-2_15",
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2406.04938",
       },
     ],
   },
@@ -142,14 +134,13 @@ const graphSystems: Publication[] = [
       "An I/O-Efficient Disk-based Graph System for Scalable Second-Order Random Walk of Large Graphs",
     authors: (
       <>
-        <strong>Hongzheng Li</strong>, Yingxia Shao, Junping Du, Bin Cui, Lei
+        <strong>Hongzheng Li</strong>, Yingxia Shao*, Junping Du, Bin Cui, Lei
         Chen
       </>
     ),
-    venue: "Proceedings of the VLDB Endowment (PVLDB), 15(8): 1619–1631",
-    year: "2022",
+    venue: "PVLDB 15(8), 1619–1631 · VLDB 2022",
     ccf: "A",
-    note: "GraSorw · VLDB 2022",
+    note: "GraSorw",
     links: [
       {
         label: "Paper",
@@ -163,40 +154,6 @@ const graphSystems: Publication[] = [
   },
 ];
 
-const otherWorks: Publication[] = [
-  {
-    title: "An Undergraduate Course for FOSS and with FOSS",
-    authors: (
-      <>
-        Xiao Liang, Weiying Hou, <strong>Hongzheng Li</strong>, Hongliang Liang
-      </>
-    ),
-    venue:
-      "5th International Conference on Education and E-Learning (ICEEL)",
-    year: "2021",
-    ccf: "Not Listed",
-    links: [
-      {
-        label: "DOI",
-        href: "https://doi.org/10.1145/3502434.3502465",
-      },
-    ],
-  },
-];
-
-function CcfBadge({ rank }: { rank: Publication["ccf"] }) {
-  const label =
-    rank === "N/A"
-      ? "CCF N/A"
-      : rank === "Not Listed"
-        ? "CCF Not Listed"
-        : `CCF-${rank}`;
-  const className =
-    rank === "N/A" ? "na" : rank.replaceAll(" ", "-").toLowerCase();
-
-  return <span className={`ccf ccf-${className}`}>{label}</span>;
-}
-
 function PublicationGroup({
   title,
   items,
@@ -205,163 +162,142 @@ function PublicationGroup({
   items: Publication[];
 }) {
   return (
-    <section className="publication-group" aria-labelledby={title.replaceAll(" ", "-")}>
-      <h3 id={title.replaceAll(" ", "-")}>{title}</h3>
-      <ol>
+    <section className="publication-group">
+      <h3>{title}</h3>
+      <ul>
         {items.map((publication) => (
-          <li className="publication" key={publication.title}>
-            <div className="publication-title-row">
-              <a
-                className="publication-title"
-                href={publication.links[0]?.href}
-                target={publication.links.length ? "_blank" : undefined}
-                rel={publication.links.length ? "noreferrer" : undefined}
-              >
-                {publication.title}
-              </a>
-              <span className="year">{publication.year}</span>
-            </div>
+          <li key={publication.title}>
+            <p className="paper-title">{publication.title}</p>
             <p className="authors">{publication.authors}</p>
-            <p className="venue-line">
-              <span>{publication.venue}</span>
-              <CcfBadge rank={publication.ccf} />
+            <p className="venue">
+              {publication.ccf && (
+                <span className="ccf">
+                  [{publication.ccf === "Not Listed" ? "CCF Not Listed" : `CCF-${publication.ccf}`}]
+                </span>
+              )}{" "}
+              <em>{publication.venue}</em>
+              {publication.note && <span> · {publication.note}</span>}
             </p>
-            {(publication.note || publication.links.length > 0) && (
-              <p className="publication-meta">
-                {publication.note && <span>{publication.note}</span>}
-                {publication.links.length > 0 && (
-                  <span className="paper-links">
-                    {publication.links.map((link) => (
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noreferrer"
-                        key={link.label}
-                      >
-                        [{link.label}]
-                      </a>
-                    ))}
+            {publication.links.length > 0 && (
+              <p className="paper-links">
+                {publication.links.map((link, index) => (
+                  <span key={link.label}>
+                    {index > 0 && <span className="separator"> | </span>}
+                    <a href={link.href} target="_blank" rel="noreferrer">
+                      {link.label}
+                    </a>
                   </span>
-                )}
+                ))}
               </p>
             )}
           </li>
         ))}
-      </ol>
+      </ul>
     </section>
   );
 }
 
 export default function Home() {
   return (
-    <main className="page" id="top">
-      <header className="profile">
-        <div>
-          <h1>
-            Hongzheng Li <span>李鸿政</span>
-          </h1>
-          <p className="headline">
-            Ph.D. Candidate · Beijing University of Posts and Telecommunications
-          </p>
-          <p>
-            I am a Ph.D. candidate at BUPT and a member of the iDMG research
-            group. My research lies at the intersection of{" "}
-            <strong>machine learning and computer systems</strong>, with a
-            focus on scalable training and inference.
-          </p>
-          <p>
-            I work on large-scale recommendation systems, distributed graph
-            neural network training, and efficient LLM/Mixture-of-Experts
-            inference.
-          </p>
-          <nav className="profile-links" aria-label="Profile links">
-            <a
-              href="https://scholar.google.com/citations?user=SCeqeNUAAAAJ&hl=en"
-              target="_blank"
-              rel="noreferrer"
-            >
-              Google Scholar
-            </a>
-            <a
-              href="https://github.com/DuoLife-QNL"
-              target="_blank"
-              rel="noreferrer"
-            >
-              GitHub
-            </a>
-            <a href="#publications">Publications</a>
-          </nav>
-        </div>
+    <>
+      <nav className="topbar">
+        <a href="#about-me">Homepage</a>
+      </nav>
 
-        <aside className="identity" aria-label="At a glance">
-          <div className="initials" aria-hidden="true">
+      <main className="layout" id="about-me">
+        <aside className="sidebar">
+          <div className="portrait" aria-hidden="true">
             HL
           </div>
-          <p>BUPT · iDMG</p>
-          <p>Beijing, China</p>
-          <p>ML Systems</p>
+          <h1>Hongzheng Li</h1>
+          <p className="chinese-name">李鸿政</p>
+          <p className="role">Ph.D. Student @ BUPT</p>
+          <p className="welcome">Welcome to my homepage!</p>
+          <ul className="contact-list">
+            <li>
+              <span aria-hidden="true">●</span> Beijing, China
+            </li>
+            <li>
+              <span aria-hidden="true">✉</span>{" "}
+              <a href="mailto:Ethan_Lee@bupt.edu.cn">Email</a>
+            </li>
+            <li>
+              <span aria-hidden="true">◉</span>{" "}
+              <a
+                href="https://github.com/DuoLife-QNL"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Github
+              </a>
+            </li>
+            <li>
+              <span aria-hidden="true">◆</span>{" "}
+              <a
+                href="https://scholar.google.com/citations?user=SCeqeNUAAAAJ&hl=en"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Google Scholar
+              </a>
+            </li>
+          </ul>
         </aside>
-      </header>
 
-      <section className="section research" id="research">
-        <h2>Research</h2>
-        <div className="research-grid">
-          <p>
-            <strong>ML Systems</strong>
-            <span>Large-scale training, recommendation, embedding systems</span>
-          </p>
-          <p>
-            <strong>Graph Learning</strong>
-            <span>Distributed GNN training, graph systems, graph mining</span>
-          </p>
-          <p>
-            <strong>LLM Systems</strong>
-            <span>Efficient inference, Mixture-of-Experts, model optimization</span>
-          </p>
-        </div>
-      </section>
+        <article className="content">
+          <section className="bio">
+            <p>
+              Currently, I am a Ph.D. student in the School of Computer Science,
+              Beijing University of Posts and Telecommunications (BUPT), and a
+              member of the iDMG research group.
+            </p>
+            <p>
+              My research focuses on <strong>ML systems</strong>, with an
+              emphasis on large-scale recommendation systems, distributed graph
+              neural network training, and efficient LLM and Mixture-of-Experts
+              inference.
+            </p>
+          </section>
 
-      <section className="section" id="publications">
-        <div className="section-heading">
-          <h2>Publications</h2>
-          <p>
-            * My name is in bold. CCF ranks follow the 2022 recommended venue
-            list; “Not Listed” means the venue is absent from that list.
-          </p>
-        </div>
+          <section className="major-section" id="publications">
+            <h2>📝 Publications</h2>
+            <PublicationGroup
+              title="ML Systems & Recommender Systems"
+              items={mlSystems}
+            />
+            <PublicationGroup
+              title="Graph Learning & Systems"
+              items={graphSystems}
+            />
+            <p className="author-note">
+              (* corresponding authors, <sup>#</sup> co-first authors; my name is
+              in bold. “CCF Not Listed” means the venue is absent from the CCF
+              2022 recommended list.)
+            </p>
+          </section>
 
-        <PublicationGroup title="ML Systems & Recommendation" items={mlSystems} />
-        <PublicationGroup title="Graph Learning & Systems" items={graphSystems} />
-        <PublicationGroup title="Other Work" items={otherWorks} />
-      </section>
+          <section className="major-section" id="internships">
+            <h2>💻 Internships</h2>
+            <ul className="plain-list">
+              <li>Research Intern, JD TGT, 2026 ~ Present.</li>
+              <li>
+                Research Intern, Tencent, 2024 ~ 2026. Large-scale
+                recommendation and embedding systems.
+              </li>
+            </ul>
+          </section>
 
-      <section className="section two-column-section" id="experience">
-        <div>
-          <h2>Experience</h2>
-          <article className="timeline-item">
-            <span>2024–2026</span>
-            <div>
-              <strong>Research Intern, Tencent</strong>
-              <p>Large-scale recommendation and embedding systems</p>
-            </div>
-          </article>
-        </div>
-        <div>
-          <h2>Education</h2>
-          <article className="timeline-item">
-            <span>2023–Present</span>
-            <div>
-              <strong>Ph.D. in Computer Science, BUPT</strong>
-              <p>iDMG research group</p>
-            </div>
-          </article>
-        </div>
-      </section>
-
-      <footer>
-        <span>© 2026 Hongzheng Li</span>
-        <a href="#top">Back to top ↑</a>
-      </footer>
-    </main>
+          <section className="major-section" id="education">
+            <h2>📖 Education</h2>
+            <ul className="plain-list">
+              <li>
+                2023 ~ Present, Ph.D. Student, School of Computer Science,
+                Beijing University of Posts and Telecommunications (BUPT).
+              </li>
+            </ul>
+          </section>
+        </article>
+      </main>
+    </>
   );
 }
