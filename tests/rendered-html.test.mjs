@@ -22,7 +22,7 @@ async function render() {
   );
 }
 
-test("server-renders the one-page academic homepage", async () => {
+test("server-renders the dense one-page academic homepage", async () => {
   const response = await render();
   assert.equal(response.status, 200);
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
@@ -31,11 +31,20 @@ test("server-renders the one-page academic homepage", async () => {
   assert.match(html, /<title>Hongzheng Li · Homepage<\/title>/i);
   assert.match(html, /Hongzheng Li/);
   assert.match(html, /李鸿政/);
-  assert.match(html, /Research Interests/);
-  assert.match(html, /Selected Publications/);
+  assert.match(html, /Google Scholar/);
+  assert.match(html, /Publications/);
   assert.match(html, /JITPrune/);
   assert.match(html, /Cross-Architecture Knowledge Transfer/);
   assert.match(html, /Efficient Distributed Mini-batch GNN Training/);
+  assert.match(html, /Distributed Graph Neural Network Training: A Survey/);
+  assert.match(html, /SpanGNN/);
+  assert.match(html, /GraSorw/);
+  assert.match(html, /COIN: Graph Contrastive Learning/);
+  assert.match(html, /An Undergraduate Course for FOSS/);
+  assert.match(html, /CCF-A/);
+  assert.match(html, /CCF-B/);
+  assert.match(html, /CCF-C/);
+  assert.match(html, /CCF Not Listed/);
   assert.match(html, /Beijing University of Posts and Telecommunications/);
   assert.match(html, /og\.png/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
