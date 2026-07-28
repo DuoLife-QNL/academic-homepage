@@ -1,3 +1,7 @@
+import { FaGithub, FaLocationDot } from "react-icons/fa6";
+import { MdEmail } from "react-icons/md";
+import { SiGooglescholar } from "react-icons/si";
+
 type Link = {
   label: string;
   href: string;
@@ -215,14 +219,15 @@ export default function Home() {
           <p className="welcome">Welcome to my homepage!</p>
           <ul className="contact-list">
             <li>
-              <span aria-hidden="true">●</span> Beijing, China
+              <FaLocationDot className="contact-icon location-icon" aria-hidden="true" />
+              <span>Beijing, China</span>
             </li>
             <li>
-              <span aria-hidden="true">✉</span>{" "}
+              <MdEmail className="contact-icon email-icon" aria-hidden="true" />
               <a href="mailto:Ethan_Lee@bupt.edu.cn">Ethan_Lee@bupt.edu.cn</a>
             </li>
             <li>
-              <span aria-hidden="true">◉</span>{" "}
+              <FaGithub className="contact-icon github-icon" aria-hidden="true" />
               <a
                 href="https://github.com/DuoLife-QNL"
                 target="_blank"
@@ -232,7 +237,10 @@ export default function Home() {
               </a>
             </li>
             <li>
-              <span aria-hidden="true">◆</span>{" "}
+              <SiGooglescholar
+                className="contact-icon scholar-icon"
+                aria-hidden="true"
+              />
               <a
                 href="https://scholar.google.com/citations?user=SCeqeNUAAAAJ&hl=en"
                 target="_blank"

@@ -100,24 +100,27 @@ sup {
 }
 
 .chinese-name {
-  margin: 2px 0 0;
-  color: var(--muted);
-  font-size: 13px;
+  margin: 0;
+  color: #333;
+  font-family: "Trebuchet MS", "Microsoft YaHei", "PingFang SC", sans-serif;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 1.25;
 }
 
 .role {
-  margin: 11px 0 0;
-  font-size: 14px;
-  font-weight: 700;
+  margin: 10px 0 20px;
+  font-size: 15px;
+  font-weight: 400;
 }
 
 .welcome {
-  margin: 23px 0 16px;
+  margin: 0 0 18px;
 }
 
 .contact-list {
   display: grid;
-  gap: 13px;
+  gap: 0;
   margin: 0;
   padding: 0;
   list-style: none;
@@ -125,22 +128,37 @@ sup {
 
 .contact-list li {
   display: flex;
-  gap: 8px;
+  gap: 9px;
   align-items: center;
   min-width: 0;
+  margin: 0 0 7.5px;
+  font-size: 15px;
+  line-height: 22.5px;
 }
 
-.contact-list li > span {
-  width: 14px;
-  color: #454545;
-  font-size: 11px;
-  text-align: center;
+.contact-icon {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
 }
 
 .contact-list a {
   color: var(--text);
   text-decoration: none;
   overflow-wrap: anywhere;
+}
+
+.location-icon,
+.github-icon {
+  color: #171717;
+}
+
+.email-icon {
+  color: #555b60;
+}
+
+.scholar-icon {
+  color: #4b84e6;
 }
 
 .contact-list a:hover {
