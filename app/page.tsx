@@ -279,8 +279,8 @@ export default function Home() {
                 Research Intern, JD Tech Genius Team (TGT), 2026 ~ Present.
               </li>
               <li>
-                Research Intern, Tencent, 2024 ~ 2026. Large-scale
-                recommendation and embedding systems.
+                Research Intern, Tencent (TEG/CDG), 2024 ~ 2025. Tencent
+                Rhino-Bird Elite Training Program.
               </li>
             </ul>
           </section>
