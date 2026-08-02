@@ -11,7 +11,8 @@ type Publication = {
   title: string;
   authors: React.ReactNode;
   venue: string;
-  ccf?: "A" | "B" | "C" | "Not Listed";
+  ccf?: "A" | "B" | "C";
+  jcr?: "Q1";
   note?: string;
   links: Link[];
 };
@@ -99,7 +100,7 @@ const graphSystems: Publication[] = [
       </>
     ),
     venue: "ACM Computing Surveys 56(8), 1–39 (2024)",
-    ccf: "Not Listed",
+    jcr: "Q1",
     links: [
       {
         label: "Paper",
@@ -175,9 +176,10 @@ function PublicationGroup({
             <p className="authors">{publication.authors}</p>
             <p className="venue">
               {publication.ccf && (
-                <span className="ccf">
-                  [{publication.ccf === "Not Listed" ? "CCF Not Listed" : `CCF-${publication.ccf}`}]
-                </span>
+                <span className="ccf">{`[CCF-${publication.ccf}]`}</span>
+              )}
+              {publication.jcr && (
+                <span className="ccf">{`[JCR ${publication.jcr}]`}</span>
               )}{" "}
               <em>{publication.venue}</em>
               {publication.note && <span> · {publication.note}</span>}
@@ -287,8 +289,7 @@ export default function Home() {
             />
             <p className="author-note">
               (* corresponding authors, <sup>#</sup> co-first authors; my name is
-              in bold. “CCF Not Listed” means the venue is absent from the CCF
-              2026 recommended list.)
+              in bold. CCF ranks follow the CCF 2026 recommended list.)
             </p>
           </section>
 
