@@ -48,7 +48,7 @@ test("server-renders the dense one-page academic homepage", async () => {
   assert.match(html, /Distributed Graph Neural Network Training: A Survey/);
   assert.match(html, /SpanGNN/);
   assert.match(html, /PVLDB 15\(8\) · VLDB 2022/);
-  assert.match(html, /COIN: Graph Contrastive Learning/);
+  assert.doesNotMatch(html, /COIN: Graph Contrastive Learning/);
   assert.doesNotMatch(html, /An Undergraduate Course for FOSS/);
   assert.match(html, /JD TGT/);
   assert.match(html, /2026 ~ Present/);
@@ -57,7 +57,7 @@ test("server-renders the dense one-page academic homepage", async () => {
   assert.match(html, /Transferred to the Ph\.D\. program in 2023/);
   assert.match(html, /CCF-A/);
   assert.match(html, /CCF-B/);
-  assert.match(html, /CCF-C/);
+  assert.doesNotMatch(html, /CCF-C/);
   assert.match(html, /JCR Q1/);
   assert.doesNotMatch(html, /CCF Not Listed/);
   assert.match(html, /CCF 2026 recommended list/);

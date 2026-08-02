@@ -73,24 +73,6 @@ const graphSystems: Publication[] = [
     links: [],
   },
   {
-    title:
-      "COIN: Graph Contrastive Learning with Orthogonal Continuous Augmentation and Information Balance",
-    authors: (
-      <>
-        Zhenyu Lin, <strong>Hongzheng Li</strong>, Guanhua Ye, Yawen Li, Meiyu
-        Liang, Yingxia Shao
-      </>
-    ),
-    venue: "Data Science and Engineering (2026)",
-    ccf: "C",
-    links: [
-      {
-        label: "Paper",
-        href: "https://link.springer.com/article/10.1007/s41019-025-00333-7",
-      },
-    ],
-  },
-  {
     title: "Distributed Graph Neural Network Training: A Survey",
     authors: (
       <>
