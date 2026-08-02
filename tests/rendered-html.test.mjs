@@ -50,7 +50,7 @@ test("server-renders the dense one-page academic homepage", async () => {
   assert.match(html, /PVLDB 15\(8\) · VLDB 2022/);
   assert.doesNotMatch(html, /COIN: Graph Contrastive Learning/);
   assert.doesNotMatch(html, /An Undergraduate Course for FOSS/);
-  assert.match(html, /JD TGT/);
+  assert.match(html, /JD Tech Genius Team \(TGT\)/);
   assert.match(html, /2026 ~ Present/);
   assert.match(html, /2021 ~ 2023/);
   assert.match(html, /2017 ~ 2021/);

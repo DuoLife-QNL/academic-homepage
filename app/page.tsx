@@ -275,7 +275,9 @@ export default function Home() {
           <section className="major-section" id="internships">
             <h2>💻 Internships</h2>
             <ul className="plain-list">
-              <li>Research Intern, JD TGT, 2026 ~ Present.</li>
+              <li>
+                Research Intern, JD Tech Genius Team (TGT), 2026 ~ Present.
+              </li>
               <li>
                 Research Intern, Tencent, 2024 ~ 2026. Large-scale
                 recommendation and embedding systems.
