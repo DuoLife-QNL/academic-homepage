@@ -288,7 +288,7 @@ export default function Home() {
             <p className="author-note">
               (* corresponding authors, <sup>#</sup> co-first authors; my name is
               in bold. “CCF Not Listed” means the venue is absent from the CCF
-              2022 recommended list.)
+              2026 recommended list.)
             </p>
           </section>
 

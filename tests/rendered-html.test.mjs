@@ -55,6 +55,8 @@ test("server-renders the dense one-page academic homepage", async () => {
   assert.match(html, /CCF-B/);
   assert.match(html, /CCF-C/);
   assert.match(html, /CCF Not Listed/);
+  assert.match(html, /CCF 2026 recommended list/);
+  assert.doesNotMatch(html, /CCF 2022 recommended list/);
   assert.match(html, /Beijing University of Posts and Telecommunications/);
   assert.match(html, /og\.png/);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/);
