@@ -11,19 +11,19 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://duolife.cc"),
   title: "Hongzheng Li · Homepage",
   description:
-    "Hongzheng Li is a Ph.D. candidate at BUPT working on ML systems, large-scale recommendation, distributed GNN training, and efficient LLM inference.",
+    "Hongzheng Li is a Ph.D. candidate at BUPT working on ML systems, large-scale recommendation, distributed GNN training, and efficient LLM training.",
   keywords: [
     "Hongzheng Li",
     "李鸿政",
     "ML Systems",
     "Recommendation Systems",
     "Distributed GNN",
-    "LLM Inference",
+    "LLM Training",
   ],
   openGraph: {
     title: "Hongzheng Li · Homepage",
     description:
-      "Research in ML systems, large-scale recommendation, distributed GNN training, and efficient LLM inference.",
+      "Research in ML systems, large-scale recommendation, distributed GNN training, and efficient LLM training.",
     type: "website",
     url: "/",
     images: [{ url: "/og.png", width: 1200, height: 630 }],

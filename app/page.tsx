@@ -272,8 +272,7 @@ export default function Home() {
             <p>
               My research focuses on <strong>ML systems</strong>, with an
               emphasis on large-scale recommendation systems, distributed graph
-              neural network training, and efficient LLM and Mixture-of-Experts
-              inference.
+              neural network training, and efficient LLM training.
             </p>
           </section>
 
