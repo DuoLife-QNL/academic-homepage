@@ -67,7 +67,7 @@ const graphSystems: Publication[] = [
         Zhang, Hongbo Yin, Wentao Zhang
       </>
     ),
-    venue: "IEEE TKDE, under major revision",
+    venue: "IEEE TKDE, accepted (2026)",
     ccf: "A",
     note: "DEGNN",
     links: [],
