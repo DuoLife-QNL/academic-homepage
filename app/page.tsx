@@ -143,9 +143,8 @@ const graphSystems: Publication[] = [
         Chen
       </>
     ),
-    venue: "PVLDB 15(8), 1619–1631 · VLDB 2022",
+    venue: "PVLDB 15(8) · VLDB 2022",
     ccf: "A",
-    note: "GraSorw",
     links: [
       {
         label: "Paper",

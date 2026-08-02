@@ -46,7 +46,7 @@ test("server-renders the dense one-page academic homepage", async () => {
   assert.doesNotMatch(html, /under major revision/);
   assert.match(html, /Distributed Graph Neural Network Training: A Survey/);
   assert.match(html, /SpanGNN/);
-  assert.match(html, /GraSorw/);
+  assert.match(html, /PVLDB 15\(8\) · VLDB 2022/);
   assert.match(html, /COIN: Graph Contrastive Learning/);
   assert.doesNotMatch(html, /An Undergraduate Course for FOSS/);
   assert.match(html, /JD TGT/);
