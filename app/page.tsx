@@ -70,7 +70,6 @@ const graphSystems: Publication[] = [
     ),
     venue: "IEEE TKDE, accepted (2026)",
     ccf: "A",
-    note: "DEGNN",
     links: [],
   },
   {

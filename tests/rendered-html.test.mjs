@@ -43,6 +43,7 @@ test("server-renders the dense one-page academic homepage", async () => {
   assert.match(html, /Cross-Architecture Knowledge Transfer/);
   assert.match(html, /Efficient Distributed Mini-batch GNN Training/);
   assert.match(html, /IEEE TKDE, accepted \(2026\)/);
+  assert.doesNotMatch(html, /DEGNN/);
   assert.doesNotMatch(html, /under major revision/);
   assert.match(html, /Distributed Graph Neural Network Training: A Survey/);
   assert.match(html, /SpanGNN/);
