@@ -32,21 +32,18 @@ core content.
 
 ## Deployment
 
-The project builds to a Cloudflare Worker-compatible ESM bundle through
-[vinext](https://github.com/cloudflare/vinext). It can also be adapted for a
-conventional Node.js or static hosting workflow on `duolife.cc`.
+The project deploys to Cloudflare Workers through
+[vinext](https://github.com/cloudflare/vinext). The production Worker serves
+`lihongzheng.duolife.cc`; the GitHub repository remains the source of truth for
+automatic builds from `main`.
 
 ```bash
 npm run build
-npm run start
+npm run deploy
 ```
-
-Deployment-specific server configuration is intentionally kept out of this
-repository until the target path and domain are finalized.
 
 ## Content
 
 - Main page: `app/page.tsx`
 - Visual system: `app/globals.css`
 - Metadata and social preview: `app/layout.tsx`, `public/og.png`
-
