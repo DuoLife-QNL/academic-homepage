@@ -226,7 +226,7 @@ export default function Home() {
             </li>
             <li>
               <MdEmail className="contact-icon email-icon" aria-hidden="true" />
-              <a href="mailto:Ethan_Lee@bupt.edu.cn">Ethan_Lee@bupt.edu.cn</a>
+              <a href="mailto:Ethan_Lee@bupt.edu.cn">Email</a>
             </li>
             <li>
               <FaGithub className="contact-icon github-icon" aria-hidden="true" />

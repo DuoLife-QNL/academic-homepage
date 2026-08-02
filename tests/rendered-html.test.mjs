@@ -34,7 +34,8 @@ test("server-renders the dense one-page academic homepage", async () => {
   assert.match(html, /Google Scholar/);
   assert.match(html, /efficient LLM training/);
   assert.doesNotMatch(html, /Mixture-of-Experts inference|efficient LLM inference/);
-  assert.match(html, /Ethan_Lee@bupt\.edu\.cn/);
+  assert.match(html, /href="mailto:Ethan_Lee@bupt\.edu\.cn">Email<\/a>/);
+  assert.doesNotMatch(html, />Ethan_Lee@bupt\.edu\.cn<\/a>/);
   assert.match(html, /Yingxia Shao/);
   assert.match(html, /shaoyx\.github\.io/);
   assert.match(html, /Publications/);
