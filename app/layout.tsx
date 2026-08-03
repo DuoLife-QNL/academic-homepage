@@ -7,8 +7,19 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
+const siteUrl = "https://lihongzheng.duolife.cc";
+
+const websiteStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: "DuoLife",
+  alternateName: ["Hongzheng Li", "lihongzheng.duolife.cc"],
+  url: `${siteUrl}/`,
+};
+
 export const metadata: Metadata = {
-  metadataBase: new URL("https://duolife.cc"),
+  metadataBase: new URL(siteUrl),
+  applicationName: "DuoLife",
   title: "Hongzheng Li · Homepage",
   description:
     "Hongzheng Li is a Ph.D. candidate at BUPT working on ML systems, large-scale recommendation, distributed GNN training, and efficient LLM training.",
@@ -20,7 +31,15 @@ export const metadata: Metadata = {
     "Distributed GNN",
     "LLM Training",
   ],
+  alternates: {
+    canonical: "/",
+  },
+  icons: {
+    icon: [{ url: "/favicon.png", type: "image/png", sizes: "576x576" }],
+    apple: [{ url: "/apple-touch-icon.png", sizes: "180x180" }],
+  },
   openGraph: {
+    siteName: "DuoLife",
     title: "Hongzheng Li · Homepage",
     description:
       "Research in ML systems, large-scale recommendation, distributed GNN training, and efficient LLM training.",
@@ -43,6 +62,14 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteStructuredData),
+          }}
+        />
+      </head>
       <body className={geistSans.variable}>{children}</body>
     </html>
   );

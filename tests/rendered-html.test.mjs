@@ -29,6 +29,16 @@ test("server-renders the dense one-page academic homepage", async () => {
 
   const html = await response.text();
   assert.match(html, /<title>Hongzheng Li · Homepage<\/title>/i);
+  assert.match(html, /<meta name="application-name" content="DuoLife"/i);
+  assert.match(html, /<link rel="canonical" href="https:\/\/lihongzheng\.duolife\.cc\/"/i);
+  assert.match(
+    html,
+    /<link rel="icon" href="https:\/\/lihongzheng\.duolife\.cc\/favicon\.png" sizes="576x576" type="image\/png"/i,
+  );
+  assert.match(html, /"@type":"WebSite"/);
+  assert.match(html, /"name":"DuoLife"/);
+  assert.match(html, /"url":"https:\/\/lihongzheng\.duolife\.cc\/"/);
+  assert.match(html, /property="og:site_name" content="DuoLife"/i);
   assert.match(html, /Hongzheng Li/);
   assert.match(html, /李鸿政/);
   assert.match(html, /Google Scholar/);
