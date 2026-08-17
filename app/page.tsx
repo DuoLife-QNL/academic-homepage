@@ -279,7 +279,8 @@ export default function Home() {
             <h2>💻 Internships</h2>
             <ul className="plain-list">
               <li>
-                Research Intern, JD Tech Genius Team (TGT), 2026 ~ Present.
+                Research Intern, JD.com (JD Retail), 2026 ~ Present. Tech Genius
+                Team (TGT).
               </li>
               <li>
                 Research Intern, Tencent (TEG/CDG), 2024 ~ 2025. Rhion-Bird

@@ -67,7 +67,10 @@ test("server-renders the dense one-page academic homepage", async () => {
   assert.match(html, /ECML-PKDD · 2024/);
   assert.doesNotMatch(html, /COIN: Graph Contrastive Learning/);
   assert.doesNotMatch(html, /An Undergraduate Course for FOSS/);
-  assert.match(html, /JD Tech Genius Team \(TGT\)/);
+  assert.match(
+    html,
+    /Research Intern, JD\.com \(JD Retail\), 2026 ~ Present\. Tech Genius Team \(TGT\)\./,
+  );
   assert.match(html, /Tencent \(TEG\/CDG\), 2024 ~ 2025/);
   assert.match(html, /Rhion-Bird Talent Cultivation Program/);
   assert.doesNotMatch(html, /Tencent Rhino-Bird Elite Training Program/);
