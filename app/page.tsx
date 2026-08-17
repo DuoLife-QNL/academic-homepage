@@ -17,7 +17,7 @@ type Publication = {
   links: Link[];
 };
 
-const mlSystems: Publication[] = [
+const selectedPublications: Publication[] = [
   {
     title:
       "JITPrune: An Efficient Online Feature Pruning Framework for Embedding-based DLRM Training",
@@ -38,26 +38,6 @@ const mlSystems: Publication[] = [
   },
   {
     title:
-      "Efficient Cross-Architecture Knowledge Transfer for Large-Scale Online User Response Prediction",
-    authors: (
-      <>
-        Yucheng Wu, Yuekui Yang, <strong>Hongzheng Li</strong>, Anan Liu, Jian
-        Xiao, Junjie Zhai, Huan Yu, Shaoping Ma, Leye Wang
-      </>
-    ),
-    venue: "In preprint",
-    links: [
-      {
-        label: "arXiv",
-        href: "https://arxiv.org/abs/2602.01775",
-      },
-    ],
-  },
-];
-
-const graphSystems: Publication[] = [
-  {
-    title:
       "Efficient Distributed Mini-batch GNN Training with Decentralized Batch Processing",
     authors: (
       <>
@@ -72,6 +52,48 @@ const graphSystems: Publication[] = [
       {
         label: "Paper",
         href: "https://ieeexplore.ieee.org/abstract/document/11644381",
+      },
+    ],
+  },
+  {
+    title:
+      "An I/O-Efficient Disk-based Graph System for Scalable Second-Order Random Walk of Large Graphs",
+    authors: (
+      <>
+        <strong>Hongzheng Li</strong>, Yingxia Shao*, Junping Du, Bin Cui, Lei
+        Chen
+      </>
+    ),
+    venue: "PVLDB 15(8) · VLDB 2022",
+    ccf: "A",
+    links: [
+      {
+        label: "Paper",
+        href: "https://www.vldb.org/pvldb/vol15/p1619-shao.pdf",
+      },
+      {
+        label: "Code",
+        href: "https://github.com/DuoLife-QNL/GraSorw",
+      },
+    ],
+  },
+];
+
+const otherPublications: Publication[] = [
+  {
+    title:
+      "Efficient Cross-Architecture Knowledge Transfer for Large-Scale Online User Response Prediction",
+    authors: (
+      <>
+        Yucheng Wu, Yuekui Yang, <strong>Hongzheng Li</strong>, Anan Liu, Jian
+        Xiao, Junjie Zhai, Huan Yu, Shaoping Ma, Leye Wang
+      </>
+    ),
+    venue: "In preprint",
+    links: [
+      {
+        label: "arXiv",
+        href: "https://arxiv.org/abs/2602.01775",
       },
     ],
   },
@@ -118,28 +140,6 @@ const graphSystems: Publication[] = [
       },
     ],
   },
-  {
-    title:
-      "An I/O-Efficient Disk-based Graph System for Scalable Second-Order Random Walk of Large Graphs",
-    authors: (
-      <>
-        <strong>Hongzheng Li</strong>, Yingxia Shao*, Junping Du, Bin Cui, Lei
-        Chen
-      </>
-    ),
-    venue: "PVLDB 15(8) · VLDB 2022",
-    ccf: "A",
-    links: [
-      {
-        label: "Paper",
-        href: "https://www.vldb.org/pvldb/vol15/p1619-shao.pdf",
-      },
-      {
-        label: "Code",
-        href: "https://github.com/DuoLife-QNL/GraSorw",
-      },
-    ],
-  },
 ];
 
 function PublicationGroup({
@@ -162,7 +162,7 @@ function PublicationGroup({
                 <span className="ccf">{`[CCF-${publication.ccf}]`}</span>
               )}
               {publication.jcr && (
-                <span className="ccf">{`[JCR ${publication.jcr}]`}</span>
+                <span className="jcr">{`[JCR ${publication.jcr}]`}</span>
               )}{" "}
               <em>{publication.venue}</em>
               {publication.note && <span> · {publication.note}</span>}
@@ -262,12 +262,12 @@ export default function Home() {
           <section className="major-section" id="publications">
             <h2>📝 Publications</h2>
             <PublicationGroup
-              title="ML Systems & Recommender Systems"
-              items={mlSystems}
+              title="Selected Publications"
+              items={selectedPublications}
             />
             <PublicationGroup
-              title="Graph Learning & Systems"
-              items={graphSystems}
+              title="Other Publications"
+              items={otherPublications}
             />
             <p className="author-note">
               (* corresponding authors, <sup>#</sup> co-first authors; my name is

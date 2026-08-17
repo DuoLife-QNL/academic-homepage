@@ -49,6 +49,8 @@ test("server-renders the dense one-page academic homepage", async () => {
   assert.match(html, /Yingxia Shao/);
   assert.match(html, /shaoyx\.github\.io/);
   assert.match(html, /Publications/);
+  assert.match(html, /Selected Publications/);
+  assert.match(html, /Other Publications/);
   assert.match(html, /JITPrune/);
   assert.match(html, /Cross-Architecture Knowledge Transfer/);
   assert.match(html, /Efficient Distributed Mini-batch GNN Training/);
@@ -73,6 +75,14 @@ test("server-renders the dense one-page academic homepage", async () => {
   assert.match(html, /CCF-A/);
   assert.match(html, /CCF-B/);
   assert.doesNotMatch(html, /CCF-C/);
+
+  const jitPruneIndex = html.indexOf("JITPrune");
+  const deGnnIndex = html.indexOf("Efficient Distributed Mini-batch GNN Training");
+  const graSorwIndex = html.indexOf("An I/O-Efficient Disk-based Graph System");
+  const crossAdaptIndex = html.indexOf("Efficient Cross-Architecture Knowledge Transfer");
+  assert.ok(jitPruneIndex < deGnnIndex);
+  assert.ok(deGnnIndex < graSorwIndex);
+  assert.ok(graSorwIndex < crossAdaptIndex);
   assert.match(html, /JCR Q1/);
   assert.doesNotMatch(html, /CCF Not Listed/);
   assert.match(html, /CCF 2026 recommended list/);
