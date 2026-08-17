@@ -46,7 +46,6 @@ const mlSystems: Publication[] = [
       </>
     ),
     venue: "In preprint",
-    note: "CrossAdapt",
     links: [
       {
         label: "arXiv",
