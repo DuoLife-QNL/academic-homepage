@@ -27,7 +27,7 @@ const selectedPublications: Publication[] = [
         Yuekui Yang, Yingxia Shao
       </>
     ),
-    venue: "ICDE 2026 Industry and Applications",
+    venue: "ICDE Industry and Applications Track · 2026",
     ccf: "A",
     links: [
       {
@@ -46,7 +46,7 @@ const selectedPublications: Publication[] = [
         Zhang, Hongbo Yin, Wentao Zhang
       </>
     ),
-    venue: "IEEE TKDE, accepted (2026)",
+    venue: "IEEE TKDE · 2026",
     ccf: "A",
     links: [
       {
@@ -64,7 +64,7 @@ const selectedPublications: Publication[] = [
         Chen
       </>
     ),
-    venue: "PVLDB 15(8) · VLDB 2022",
+    venue: "PVLDB / VLDB · 2022",
     ccf: "A",
     links: [
       {
@@ -89,7 +89,7 @@ const otherPublications: Publication[] = [
         Xiao, Junjie Zhai, Huan Yu, Shaoping Ma, Leye Wang
       </>
     ),
-    venue: "In preprint",
+    venue: "arXiv preprint · 2026",
     links: [
       {
         label: "arXiv",
@@ -105,7 +105,7 @@ const otherPublications: Publication[] = [
         Yawen Li, Xupeng Miao, Wentao Zhang, Bin Cui, Lei Chen
       </>
     ),
-    venue: "ACM Computing Surveys 56(8), 1–39 (2024)",
+    venue: "ACM Computing Surveys · 2024",
     jcr: "Q1",
     links: [
       {
@@ -127,7 +127,7 @@ const otherPublications: Publication[] = [
         Chen, Yingxia Shao
       </>
     ),
-    venue: "ECML-PKDD 2024",
+    venue: "ECML-PKDD · 2024",
     ccf: "B",
     links: [
       {
