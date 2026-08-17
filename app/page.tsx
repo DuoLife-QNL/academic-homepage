@@ -29,7 +29,6 @@ const mlSystems: Publication[] = [
     ),
     venue: "ICDE 2026 Industry and Applications",
     ccf: "A",
-    note: "Oral",
     links: [
       {
         label: "Paper",
