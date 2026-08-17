@@ -32,8 +32,8 @@ const mlSystems: Publication[] = [
     note: "Oral",
     links: [
       {
-        label: "Conference",
-        href: "https://icde2026.github.io/program_details.html",
+        label: "Paper",
+        href: "https://ieeexplore.ieee.org/abstract/document/11629528",
       },
     ],
   },
@@ -70,7 +70,12 @@ const graphSystems: Publication[] = [
     ),
     venue: "IEEE TKDE, accepted (2026)",
     ccf: "A",
-    links: [],
+    links: [
+      {
+        label: "Paper",
+        href: "https://ieeexplore.ieee.org/abstract/document/11644381",
+      },
+    ],
   },
   {
     title: "Distributed Graph Neural Network Training: A Survey",
