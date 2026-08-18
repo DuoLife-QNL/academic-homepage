@@ -195,9 +195,11 @@ export default function Home() {
 
       <main className="layout" id="about-me">
         <aside className="sidebar">
-          <div className="portrait" aria-hidden="true">
-            HL
-          </div>
+          <img
+            className="portrait"
+            src="/profile-kamakura.jpg"
+            alt="Hongzheng Li"
+          />
           <h1>Hongzheng Li</h1>
           <p className="chinese-name">李鸿政</p>
           <p className="role">Ph.D. Student @ BUPT</p>
