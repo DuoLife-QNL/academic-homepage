@@ -189,12 +189,21 @@ function PublicationGroup({
 export default function Home() {
   return (
     <>
-      <nav className="topbar">
-        <a href="#about-me">Homepage</a>
+      <nav className="topbar" aria-label="Primary navigation">
+        <div className="topbar-inner">
+          <a className="brand" href="#about-me">
+            Hongzheng Li
+          </a>
+          <div className="nav-links">
+            <a href="#publications">Publications</a>
+            <a href="#internships">Internships</a>
+            <a href="#education">Education</a>
+          </div>
+        </div>
       </nav>
 
-      <main className="layout" id="about-me">
-        <aside className="sidebar">
+      <main className="page-shell" id="about-me">
+        <header className="profile-hero">
           <div className="portrait">
             <img
               className="portrait-image"
@@ -202,46 +211,13 @@ export default function Home() {
               alt="Hongzheng Li"
             />
           </div>
-          <h1>Hongzheng Li</h1>
-          <p className="chinese-name">李鸿政</p>
-          <p className="role">Ph.D. Student @ BUPT</p>
-          <ul className="contact-list">
-            <li>
-              <FaLocationDot className="contact-icon location-icon" aria-hidden="true" />
-              <span>Beijing, China</span>
-            </li>
-            <li>
-              <MdEmail className="contact-icon email-icon" aria-hidden="true" />
-              <a href="mailto:Ethan_Lee@bupt.edu.cn">Email</a>
-            </li>
-            <li>
-              <FaGithub className="contact-icon github-icon" aria-hidden="true" />
-              <a
-                href="https://github.com/DuoLife-QNL"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Github
-              </a>
-            </li>
-            <li>
-              <SiGooglescholar
-                className="contact-icon scholar-icon"
-                aria-hidden="true"
-              />
-              <a
-                href="https://scholar.google.com/citations?user=SCeqeNUAAAAJ&hl=en"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Google Scholar
-              </a>
-            </li>
-          </ul>
-        </aside>
-
-        <article className="content">
-          <section className="bio">
+          <div className="profile-intro">
+            <div className="identity">
+              <h1>Hongzheng Li</h1>
+              <span className="chinese-name">李鸿政</span>
+            </div>
+            <p className="role">Ph.D. Student @ BUPT</p>
+            <section className="bio">
             <p>
               Currently, I am a Ph.D. student in the School of Computer Science,
               Beijing University of Posts and Telecommunications (BUPT), and a
@@ -260,10 +236,47 @@ export default function Home() {
               emphasis on large-scale recommendation systems, distributed graph
               neural network training, and efficient LLM training.
             </p>
-          </section>
+            </section>
+            <ul className="contact-list">
+              <li className="location">
+                <FaLocationDot className="contact-icon location-icon" aria-hidden="true" />
+                <span>Beijing, China</span>
+              </li>
+              <li>
+                <MdEmail className="contact-icon email-icon" aria-hidden="true" />
+                <a href="mailto:Ethan_Lee@bupt.edu.cn">Email</a>
+              </li>
+              <li>
+                <FaGithub className="contact-icon github-icon" aria-hidden="true" />
+                <a
+                  href="https://github.com/DuoLife-QNL"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Github
+                </a>
+              </li>
+              <li>
+                <SiGooglescholar
+                  className="contact-icon scholar-icon"
+                  aria-hidden="true"
+                />
+                <a
+                  href="https://scholar.google.com/citations?user=SCeqeNUAAAAJ&hl=en"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Google Scholar
+                </a>
+              </li>
+            </ul>
+          </div>
+        </header>
+
+        <article className="content">
 
           <section className="major-section" id="publications">
-            <h2>📝 Publications</h2>
+            <h2>Publications</h2>
             <PublicationGroup
               title="Selected Publications"
               items={selectedPublications}
@@ -279,7 +292,7 @@ export default function Home() {
           </section>
 
           <section className="major-section" id="internships">
-            <h2>💻 Internships</h2>
+            <h2>Internships</h2>
             <ul className="plain-list">
               <li>
                 Research Intern, JD.com (JD Retail), 2026 ~ Present. Tech Genius
@@ -293,7 +306,7 @@ export default function Home() {
           </section>
 
           <section className="major-section" id="education">
-            <h2>📖 Education</h2>
+            <h2>Education</h2>
             <ul className="plain-list">
               <li>
                 2023 ~ Present, Ph.D. Program in Computer Science and
