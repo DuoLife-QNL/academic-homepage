@@ -93,7 +93,7 @@ sup {
   height: 100%;
   object-fit: cover;
   object-position: 50% 43%;
-  transform: scale(1.5) translate(10%, 8%);
+  transform: scale(1.16);
 }
 
 .sidebar h1 {
