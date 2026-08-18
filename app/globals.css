@@ -93,7 +93,7 @@ sup {
   height: 100%;
   object-fit: cover;
   object-position: 50% 43%;
-  transform: scale(1.16);
+  transform: scale(1.5) translate(10%, 8%);
 }
 
 .sidebar h1 {
@@ -117,10 +117,6 @@ sup {
   margin: 10px 0 20px;
   font-size: 15px;
   font-weight: 400;
-}
-
-.welcome {
-  margin: 0 0 18px;
 }
 
 .contact-list {
@@ -311,8 +307,7 @@ sup {
   }
 
   .chinese-name,
-  .role,
-  .welcome {
+  .role {
     margin: 2px 0 0;
   }
 
@@ -337,10 +332,6 @@ sup {
   .portrait {
     width: 96px;
     height: 96px;
-  }
-
-  .welcome {
-    display: none;
   }
 
   .contact-list {

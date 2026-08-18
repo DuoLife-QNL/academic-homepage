@@ -205,7 +205,6 @@ export default function Home() {
           <h1>Hongzheng Li</h1>
           <p className="chinese-name">李鸿政</p>
           <p className="role">Ph.D. Student @ BUPT</p>
-          <p className="welcome">Welcome to my homepage!</p>
           <ul className="contact-list">
             <li>
               <FaLocationDot className="contact-icon location-icon" aria-hidden="true" />
